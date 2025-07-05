@@ -1,3 +1,4 @@
+using System.Diagnostics;
 public static class Arrays
 {
     /// <summary>
@@ -13,7 +14,19 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // <steps>
+        //      - create an Array to store results => List<int> results
+        //      - create a for loop
+        //      - perform arithemetics (multiply by i) and append (Add) to <List> results
+        // </steps>
+
+        List<double> results = new List<double>();
+
+        for (int i = 1; i <= length; i++)
+        {
+            results.Add(number * i);
+        }
+        return results.ToArray();
     }
 
     /// <summary>
@@ -29,5 +42,19 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+
+        // <steps>
+        //      - split the list into two parts (start and end) based on amount
+        //      - concatenate end + start
+        // </steps>
+        int[] start = data.Skip(0).Take(data.Count - amount).ToArray();
+        int[] end = data.Skip(data.Count - amount).Take(amount).ToArray();
+        // Console.WriteLine(string.Join(", ", end));
+        // Console.WriteLine(string.Join(", ", start));
+        List<int> results = end.Concat(start).ToList();
+
+        data.Clear();
+        data.AddRange(results);
     }
 }

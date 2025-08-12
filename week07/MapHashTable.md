@@ -1,3 +1,7 @@
+## Map/Hash Table
+
+A map stores key–value pairs, allowing quick lookups by key. Ideal for fast retrieval without scanning all elements. Example: a user database mapping usernames to account details.
+
 ```mermaid
 graph TD
     A[Map / Hash Table]
